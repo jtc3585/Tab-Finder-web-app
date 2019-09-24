@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>API Admin</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id=app>
+<h1>{{title}}</h1>
+<ul id="scoresList" v-for="n in result"><li>{{n}}</li></ul>
+</div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.0/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA8ZDD0h5FT1UXTdJfC8uUe64rypS_0gH0",
+    authDomain: "apifinal.firebaseapp.com",
+    databaseURL: "https://apifinal.firebaseio.com",
+    projectId: "apifinal",
+    storageBucket: "apifinal.appspot.com",
+    messagingSenderId: "556094912495",
+    appId: "1:556094912495:web:c4b1150bc3dc14eb"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  
+
+	
+  // #4 This is where the magic happens!
+  firebase.database().ref("searches").on("value", dataChanged, firebaseError);
+	
+/*	
+  function dataChanged(data){
+    console.log(data.val());
+  }
+	
+  function firebaseError(error){
+    console.log(error);
+  }
+*/
+
+function dataChanged(data){
+  let obj = data.val();
+
+  let bigString=[];
+  for (let key in obj){   // use for..in to interate through object keys
+    let row = obj[key];
+    bigString.push( `${row.search }`);
+
+  }	
+  app.equalResults(bigString);
+
+}	
+
+function firebaseError(error){
+	console.log(error);
+	}
+	
+
+const app = new Vue({
+	el: '#app',
+	data: {
+	title: "Search History",
+	result: []
+	},
+	methods: {
+  equalResults: function (string) {
+    this.result = string;
+  }
+}
+});
+
+</script>
+</body>
+</html>

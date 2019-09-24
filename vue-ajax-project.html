@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Can You Pick It?</title>
+	<link href="https://fonts.googleapis.com/css?family=Acme|Permanent+Marker" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/@babel/polyfill@latest/dist/polyfill.min.js"></script>
+	<script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+	<script>
+	  //My component
+Vue.component('pageHead',{
+props:['title'],
+template: `	<div class="myheader">
+		<h1>{{title}}</h1>
+		<p>Search any artist to find instructional tabs to play along to on <b>Songsterr</b></p>
+	</div>`
+});
+</script>
+</head>
+<body>
+<div id="app">
+	<div class="myheader">
+		<h1>{{title}}</h1>
+		<p>Search any artist to find instructional tabs to play along to on <b>Songsterr</b></p>
+	</div>		
+	<div class="container">
+		<div class="row search-row">
+			<div class="col-md-12">
+			<input class="input-control" placeholder="Artist Name" v-model="artist">
+				Max # results<select class="form-control" v-model="limit">
+					<option value="5">5</option>
+					<option value="15">15</option>
+					<option value="30">30</option>
+					<option value="50">50</option>
+				</select>
+				Language<select class="language-control" v-model="language">
+					<option value="EN">English</option>
+					<option value="ES">Spanish</option>
+					<option value="FR">French</option>
+
+				</select>
+				<button @click="search" class="btn btn-outline-success" type="submit">Search</button>
+			</div>
+		</div> <!-- end row -->
+		
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-striped table-sm">
+					  <tr>
+						<th>Artist</th>
+						<th>Bio</th>
+					  </tr>
+					  <tr>
+						<td><img v-bind:src="current.thumb" alt="Artist Thumbnail" height="200" width="200"></td>
+						<td>{{bio}}</td>
+					  </tr>	
+					 	<tr>
+						<th>Track</th>
+						<th>Songsterr Page</th>
+					  </tr>
+					  <tr v-for="n in result">
+						<td>{{n.title}}</td> 
+						<td>
+							<a v-bind:href="n.id">Get Tabs</a>
+						</td>
+					  </tr>
+				</table>
+			</div>
+		</div> <!-- end row -->
+	</div> <!-- end container -->	
+</div> <!-- end #app -->
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>

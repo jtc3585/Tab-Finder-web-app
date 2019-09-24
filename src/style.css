@@ -1,0 +1,65 @@
+		/* .myheader grabbed from Bootstrap's jumbotron example - https://getbootstrap.com/docs/4.0/examples/jumbotron/ */
+		.myheader{
+			background-color: #000;
+			color: #5CDB95;
+			padding: 4rem 2rem;
+			margin-bottom:2rem;
+		}
+		
+		.form-control{
+			display:inline;
+			max-width:75px;
+			min-height: 45px;
+			border-width: 3px;
+			border-color: rgba(50, 50, 50, 0.14);
+			margin: 10px 10px 10px 0px;
+			font-family: 'Acme', sans-serif;
+		}
+		.language-control{
+			display:block;
+			max-width:150px;
+			min-height: 45px;
+			border-width: 3px;
+			border-color: rgba(50, 50, 50, 0.14);
+			margin: 10px 10px 10px 0px;
+			font-family: 'Acme', sans-serif;
+		}		
+		.search-row{
+			margin-bottom:1rem;
+			font-family: 'Acme', sans-serif;
+		}
+		
+		.input-control{
+		display:block;
+		max-width:425px;
+		min-width:315px;
+		min-height: 45px;
+		border-width: 3px;
+		border-color: rgba(50, 50, 50, 0.14);
+		margin: 10px 10px 10px 0px;
+		font-family: 'Acme', sans-serif;
+		}
+		
+		h1 {
+		font-family: 'Permanent Marker', cursive;
+		}
+		
+		h4
+		{
+		font-family: 'Acme', sans-serif;
+		}
+		
+		th {
+		font-family: 'Permanent Marker', cursive;
+		}
+		
+		.container
+		{
+		background-color: #efecef;
+		border: 5px double black;
+		}
+		
+		body
+		{
+		background: white url("sheet.jpg") repeat fixed center; 
+		}

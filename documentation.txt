@@ -1,0 +1,44 @@
+Justin Connolly
+
+Functionality
+- I used two web services (Songsterr and TheAudioDB)
+- Local storage works in Vue
+- A language option for the artist bios supplies the required control
+- There are some errors in the console if the user searches something beyond the databases, although it shouldn't crash
+
+Design & Interaction
+- I think I have a nice looking page and layout which also adjusts to displays
+- The App is not confusing and is simple to use
+
+HTML/CSS/Media
+- Html is valid besides errors and warnings concerning the use of vue
+- css is valid
+
+Code
+-Vue used
+-Ajax used
+-Custom Class used
+-Custom component is written but not implemented due to bootstrap issuses that I showed you in the last class
+
+Impact
+- It is not what I wanted for the project after trying TasteDive for reccomendations, but I am happy that I found TheAudioDB as I think there is lots of potential using 
+the API more and it is more of what I envisioned when I wanted to use the Spotifyt API
+- I don't think its portfolio worthy yet, needs some more visual tweaks and better page updates and error handiling
+
+I struggled with getting the first API I wanted to use around CORS, I was stubborn and wanted to try and figure it out and I waited too long.
+Finals were not kind to me time wise and so I underestimated how much time I would put into this project.
+Since the first API didn't get working and I had little time I went with a new API and tried my best to make it work.
+I think the core of the app is still there, there's just no reccomendations at the moment
+Most of my extra controls were going to focus on filtering out the reccomendations.
+I'm happy with how it looks and I improved the way my table looked.
+
+I want to try and add things like the previously mentioned reccomendations, improving how the page updates to better inform the user and handle errors,
+and improve search functionality to support searching for albums or songs and not just artists. 
+90/100
+
+citation
+Background music sheet image ~~~ https://www.rosiesrewards.com/sheet-music-wallpaper/
+Permanent Marker and Acme Font families ~~~ https://fonts.google.com/?selection.family=Acme|Permanent+Marker
+Songsterr API ~~~ https://www.songsterr.com/a/wa/api
+TheAudioDB API ~~~ https://www.theaudiodb.com/api_guide.php
+
